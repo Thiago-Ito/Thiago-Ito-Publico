@@ -1,9 +1,11 @@
 <html>
-<head>
-</head>
+    
+  <head>
+      <h1>PÁGINA INICIAL</h1>
+  </head>
 
-<body>
-    <h1>Isto é um teste Khomp IED302 Monitoramento Modbus!</h1>
-</body>
+    <body>
+        <h2>Isto é um teste Khomp IED302 Monitoramento Modbus!</h2>
+    </body>
 
 </html>
