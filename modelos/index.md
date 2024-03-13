@@ -8,6 +8,10 @@
         <h2>Isto é um teste Khomp IED302 Monitoramento Modbus!</h2>
     </body>
 
-    <script>alert('Khomp!!!!!')</script>
+    <script>
+    function myFunction() {
+    alert("I am an alert box!");
+}
+</script>
 
 </html>
