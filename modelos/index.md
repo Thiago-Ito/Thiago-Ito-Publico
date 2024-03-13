@@ -7,14 +7,13 @@
     <body>
         <h2>Isto é um teste Khomp IED302 Monitoramento Modbus!</h2>
 
-    <script>
-        fetch('./modbus.json)
-        .then(res => res.json())
-        .then(data => {
-        console.log(data);
-        }        
-    </script>
+   <button onclick="myFunction()">Try it</button>
 
+<script>
+function myFunction() {
+  alert("Você clicou no botão!");
+}
+</script>
 
     </body>
 
