@@ -8,4 +8,6 @@
         <h2>Isto é um teste Khomp IED302 Monitoramento Modbus!</h2>
     </body>
 
+    <script>alert('Khomp!!!!!')</script>
+
 </html>
