@@ -5,15 +5,7 @@
   </head>
 
     <body>
-        <h2>Isto é um teste Khomp IED302 Monitoramento Modbus!</h2>
-
-   <button onclick="myFunction()">Try it</button>
-
-<script>
-function myFunction() {
-  alert("Você clicou no botão!");
-}
-</script>
+        <h2>Isto é um teste Khomp IED302 Monitoramento Modbus!</h2> 
 
     </body>
 
