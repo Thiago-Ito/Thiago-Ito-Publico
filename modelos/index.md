@@ -8,7 +8,7 @@
         <h2>Isto é um teste Khomp IED302 Monitoramento Modbus!</h2>
 
     <script>
-        fetch('./modelos.json)
+        fetch('./modbus.json)
         .then(res => res.json())
         .then(data => {
         console.log(data);
