@@ -6,11 +6,16 @@
 
     <body>
         <h2>Isto é um teste Khomp IED302 Monitoramento Modbus!</h2>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <script>
+         function myFunction() {
+         alert("I am an alert box!");}
+        </script>
     </body>
 
-    <script>
-    function myFunction() {
-    alert("I am an alert box!");
+   
 }
 </script>
 
