@@ -15,7 +15,7 @@ function myFunction() {
 }
 </script>
 
-<script type="application/json" id="js">
+<script>
 const dbParam = JSON.stringify({table:"customers",limit:20});
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
