@@ -20,8 +20,7 @@ function myFunction() {
         <tr>
             <th>Imagem</th>
             <th>Nome</th>
-            <th>Valor Unit</th>
-            <th>Valor total</th>
+            <th>Valor Unit</th>            
         </tr>
     </thead>
     <tbody id="itens"></tbody>
