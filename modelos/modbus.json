@@ -1,1 +1,5 @@
-[{"modelo":"KronKonect","marca":"2","tipo":"1"},{"modelo":"ABB_IDM96","marca":"2","tipo":"1"},{"modelo":"PEXTRON_PCPT3","marca":"2","tipo":"1"},{"modelo":"Simulador Khomp","marca":"2","tipo":"1","gridzero":true},{"modelo":"Modbus tcp slave teste","marca":"3","tipo":"3","gridzero":false},{"modelo":"Dispositivo Exemplo","marca":"8","tipo":"1","gridzero":false},{"modelo":"Inversor Intelbras","marca":"20","tipo":"1","gridzero":true},{"modelo":"SCHNEIDER_PM5500","marca":"2","tipo":"1"},{"modelo":"TREETECH_LAD","marca":"20","tipo":"1","gridzero":false},{"modelo":"USCACAMAQ_31CR","marca":"20","tipo":"1","gridzero":false}]
+{
+    "marca": "Khomp",
+    "modelo": "IED302",
+    "Tipo": "conversor"
+}
