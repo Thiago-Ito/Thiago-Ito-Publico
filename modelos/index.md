@@ -23,7 +23,7 @@ function myFunction() {
                "casado": "sim"
           };
 
-              const me = JSON.parse(meJSON);
+              var me = JSON.parse(meJSON);
               console.log(me);
     
 </script>
