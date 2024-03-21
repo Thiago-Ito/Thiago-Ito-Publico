@@ -1,10 +1,7 @@
 <html>
     
    <head>
-      <h1>PÁGINA INICIAL</h1>
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-      <script type="text/javascript" scr="index.js"></script>
+      <h1>PÁGINA INICIAL</h1>         
    </head>
 
     <body>
@@ -18,16 +15,19 @@ function myFunction() {
 }
 </script>
 
-<table>
-    <thead>
-        <tr>
-            <th>Imagem</th>
-            <th>Nome</th>
-            <th>Valor Unit</th>            
-        </tr>
-    </thead>
-    <tbody id="itens"></tbody>
-</table>
+<script>
+     const meJSON = '
+          {
+               "nome": "Thiago",
+               "idade": 39
+               "casado": true
+          }    
+         ';
+
+              const me = JSON.parse(meJSON);
+              console.log(me);
+    
+</script>
         
     </body>
 
