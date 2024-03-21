@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
     $.getJSON("modbus.json", function(data){
-    console.log(data);
+    console.log(data)
+        $('.marca').html(data.marca);
+        
     })
 })
