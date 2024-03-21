@@ -3,7 +3,7 @@
    <head>
       <h1>PÁGINA INICIAL</h1>
       
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
       <script type="text/javascript" scr="index.js"></script>
    </head>
 
