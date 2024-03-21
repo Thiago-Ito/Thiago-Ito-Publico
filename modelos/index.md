@@ -19,7 +19,7 @@ function myFunction() {
      const meJSON = 
           {
                "nome": "Thiago",
-               "idade": 39
+               "idade": 39,
                "casado": true
           };
 
