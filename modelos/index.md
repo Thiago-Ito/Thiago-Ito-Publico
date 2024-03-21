@@ -24,6 +24,7 @@ function myFunction() {
             <th>Valor total</th>
         </tr>
     </thead>
+    <tbody id="itens"></tbody>
 </table>
         
     </body>
