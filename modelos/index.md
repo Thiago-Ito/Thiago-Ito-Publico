@@ -16,14 +16,9 @@ function myFunction() {
 </script>
 
 <script>
-     const meJSON = 
-          {
-               "nome": "Thiago",
-               "idade": "39",
-               "casado": "sim"
-          };
-             
-              console.log(meJSON);
+     const meJSON = '{"Fabricante":"Khomp", "Modelo":"IED-302", "Aplicação":"Monitoramento"}'
+     const me = JSON.parse(meJSON);
+     console.log(me);
     
 </script>
         
