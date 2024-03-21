@@ -17,11 +17,11 @@ function myFunction() {
 
 <script>
      const meJSON = 
-          '{
+          {
                "nome": "Thiago",
-               "idade": 39,
-               "casado": true
-          }';
+               "idade": "39",
+               "casado": "sim"
+          };
 
               const me = JSON.parse(meJSON);
               console.log(me);
