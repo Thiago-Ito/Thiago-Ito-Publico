@@ -22,9 +22,8 @@ function myFunction() {
                "idade": "39",
                "casado": "sim"
           };
-
-              var me = JSON.parse(meJSON);
-              console.log(me);
+             
+              console.log(meJSON);
     
 </script>
         
