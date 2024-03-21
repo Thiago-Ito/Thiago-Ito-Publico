@@ -15,18 +15,16 @@ function myFunction() {
 }
 </script>
 
-<script>
-    const meJon = '
-        {
-            "nome": "Thiago",
-            "cpf": "01154205177"
-        }
-        ';
-
-    const me = JSON.parse(meJon);
-    console.log(me);
-    
-</script>
+<table>
+    <thead>
+        <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Valor Unit</th>
+            <th>Valor total</th>
+        </tr>
+    </thead>
+</table>
         
     </body>
 
