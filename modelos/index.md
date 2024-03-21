@@ -23,7 +23,7 @@ function myFunction() {
         }
         ';
 
-    const me=JSON.parse(meJon);
+    const me = JSON.parse(meJon);
     console.log(me);
     
 </script>
