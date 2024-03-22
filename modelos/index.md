@@ -3,10 +3,9 @@
     <body>      
 
 <script>
-     const meJSON = '{"Fabricante":"Khomp", "Modelo":"IED-302", "Aplicação":"Monitoramento"}'
-     const me = JSON.parse(meJSON);
-     console.log(me);    
-     Response.json(me);
+     Fetch('https://industrial-devices.app.khomp.com/modelos')
+    .then(Response => Response.json())
+    .then(data => this.setState({items:data}));
 </script>        
     </body>
 </html>
