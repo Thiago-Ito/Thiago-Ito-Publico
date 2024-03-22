@@ -1,5 +1,7 @@
 {
     "marca": "Khomp",
     "modelo": "IED302",
-    "Tipo": "conversor"
+    "Tipo": "conversor",
+    "Aplicação": "Sistemas solares",
+    "Cliente": "TRT da 4 Região"
 }
