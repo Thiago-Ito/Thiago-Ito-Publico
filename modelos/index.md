@@ -3,10 +3,12 @@
 
 <script>
     fetch('/modelos/modbus.json')
-        .then(res => res.json())
-        .then((out) => {
-               console.log('Output: ', out);
-        }).catch(err => console.error(err));
+        .then(function(response){
+            return response.json();
+        })
+    .then(function(data){
+
+    });
 </script>
     
     </body>
