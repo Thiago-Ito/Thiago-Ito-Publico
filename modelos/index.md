@@ -2,7 +2,7 @@
     <body>      
 
 <script>
-    fetch('https://industrial-devices.app.khomp.com/modelos')
+    fetch()
         .then(res => res.json())
         .then((out) => {
                console.log('Output: ', out);
