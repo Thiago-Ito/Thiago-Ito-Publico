@@ -2,7 +2,7 @@
     <body>      
 
 <script>
-    fetch('https://industrial-devices.app.khomp.com/modelos')
+    fetch('https://github.com/Thiago-Ito/Thiago-Ito-Publico/tree/main/modelos')
         .then(res => res.json())
         .then((out) => {
                console.log('Output: ', out);
