@@ -1,9 +1,18 @@
 <html>  
-    <body>      
+    <body>   
+        
+<script>
+    fetch('modbus.json')
+        .then(function(response){
+            return response.json();
+        })
+    .then(function(data){
+         console.log(data);
+    }).catch(function(error){
+             console.error('Algo deu errado!!!!');
+             console.error(error);
+    });        
+</script>   
 
-<pre style="word-wrap: break-word; white-space: pre-wrap;"> 
-"[{"modelo":"IED302 Khomp", "Aplicação":"Tribunal Regional do Trabalho da 4 Regiao"}]"
-</pre>
-    
     </body>
 </html>
