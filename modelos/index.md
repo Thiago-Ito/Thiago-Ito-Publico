@@ -8,7 +8,10 @@
         })
     .then(function(data){
          console.log(data);
-    });
+    }).catch(function(error){
+             console.error('Algo deu errado!!!!');
+             console.error(error);
+    });        
 </script>
     
     </body>
