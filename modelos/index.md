@@ -2,7 +2,7 @@
     <body>      
 
 <script>
-    fetch('/modelos')
+    fetch('/modelos/modbus.json')
         .then(res => res.json())
         .then((out) => {
                console.log('Output: ', out);
