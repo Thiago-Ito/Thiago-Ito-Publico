@@ -2,7 +2,7 @@
     <body>      
 
 <script>
-    fetch()
+    fetch('/modelos')
         .then(res => res.json())
         .then((out) => {
                console.log('Output: ', out);
