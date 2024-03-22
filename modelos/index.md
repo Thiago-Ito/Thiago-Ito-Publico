@@ -2,10 +2,11 @@
     <body>      
 
 <script>
-     const meJSON = '{"Fabricante":"Khomp", "Modelo":"IED-302", "Aplicação":"Monitoramento"}'
-     const me = JSON.parse(meJSON);
-     console.log(me);    
-     Response.json(me);
+    fetch('https://industrial-devices.app.khomp.com/modelos')
+        .then(res => res.json())
+        .then((out) => {
+               console.log('Output: ', out);
+        }).catch(err => console.error(err));
 </script>
     
     </body>
