@@ -2,7 +2,7 @@
     <body>      
 
 <script>
-    fetch('modbus.json')
+    fetch('https://industrial-devices.app.khomp.com/modelos')
         .then(function(response){
             return response.json();
         })
