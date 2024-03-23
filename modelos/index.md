@@ -1,18 +1,16 @@
 <html>  
-    <body>   
-        
-<script>
-    fetch('modbus.json')
-        .then(function(response){
-            return response.json();
-        })
-    .then(function(data){
-         console.log(data);
-    }).catch(function(error){
-             console.error('Algo deu errado!!!!');
-             console.error(error);
-    });        
-</script>   
 
+    <head>
+         <meta charset="utf-8">
+         <script src="modbus.json" type="application/json"></script>
+    </head>
+    <body>           
+{
+    "marca": "Khomp",
+    "modelo": "IED302",
+    "Tipo": "conversor",
+    "Aplicação": "Sistemas solares",
+    "Cliente": "TRT da 4 Região"
+}
     </body>
 </html>
