@@ -6,7 +6,7 @@
     <body>           
 <script>
     document.addEventListener("DOMContentLoaded", function(){
-    import('./modbus.json)
+    import('./modbus.json')
        .then((response) => response.json())
        .then((json) => {
             console.log(json);
