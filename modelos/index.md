@@ -10,7 +10,8 @@
     "modelo": "IED302",
     "Tipo": "conversor",
     "Aplicação": "Sistemas solares",
-    "Cliente": "TRT da 4 Região"
+    "Cliente": "TRT da 4 Região",
+    "Setor": "SEMPRO"
 }
     </body>
 </html>
