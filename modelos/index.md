@@ -3,7 +3,7 @@
         
     </head>
     <body>           
-<script>
+<script src="./modbus.json">
    const modbus = import("./modbus.json")
    //const encodedData = JSON.stringify(modbus)
        
