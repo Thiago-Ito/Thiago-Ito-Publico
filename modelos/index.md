@@ -2,7 +2,8 @@
     <head>
         
     </head>
-    <body>           
+    <body>
+    <script>
        const modbus = [
          {
            "marca": "Khomp Eletronicos",
@@ -13,12 +14,11 @@
          }
         ]
 
-        const encodedData = encodeURIComponent(JSON.stringify(modbus))
-        console.log(encodedData)
-        //fetch('https://thiago-ito.github.io/Thiago-Ito-Publico/modelos?modbus=${encodedData}')
-        //.then(res => res.text())
-        //.then(res => console.log(res))
-        //.catch(err => console.error(err))
-
+        const encodedData = encodeURIComponent(JSON.stringify(modbus))        
+        fetch('https://thiago-ito.github.io/Thiago-Ito-Publico/modelos?modbus=${encodedData}')
+        .then(res => res.text())
+        .then(res => console.log(res))
+        .catch(err => console.error(err))
+</script>
     </body>
 </html>
