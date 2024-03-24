@@ -5,7 +5,8 @@
     <body>
        <script>
           fetch('./modbus.json')
-        
+          .then(results => results.json())
+          .then(console.log);
        </script>
     </body>
 </html>
