@@ -4,7 +4,7 @@
     </head>
     <body>
        <script>
-          fetch('./modbus.json)
+          fetch('./modbus.json')
         
        </script>
     </body>
