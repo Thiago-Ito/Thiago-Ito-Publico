@@ -13,7 +13,8 @@
 }]
 
     const encodeData = encodeURIComponent(JSON.stringify(modbus))
-
+    alert(encodeData);
+    
     fetch('https://thiago-ito.github.io/Thiago-Ito-Publico/modelos=${encodedData}')
     .then(res => res.text())
     .then(res => console.log(res))
