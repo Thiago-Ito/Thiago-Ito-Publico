@@ -8,7 +8,7 @@
            fetch("modbus.json")
            .then(response => response.json())
            .then(data => {console.log(data)})          
-           document.querySelector("$debug").innerText = data;
+           document.querySelector().innerText = data;
         </script>
     </body>
 </html>
