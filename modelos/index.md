@@ -8,6 +8,7 @@
            fetch('./modbus.json')
            .then(response => response.json())
            .then(data => console.log(data.sentence))
+            console.log(response)
         </script>
     </body>
 </html>
