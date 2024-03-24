@@ -3,13 +3,21 @@
         
     </head>
     <body>           
-<script src="./modbus.json">
-   const modbus = JSON.stringify(import("./modbus.json"))
-   //const encodedData = JSON.stringify(modbus)
-       
-    //console.log(encodedData)
-    
-</script>
+       const modbus = [
+         {
+           "marca": "Khomp Eletronicos",
+           "modelo": "IED302",
+           "Tipo": "conversor",
+           "Aplicação": "Sistemas solares",
+           "Cliente": "TRT da 4 Região"
+         }
+        ]
+
+        const encodedData = encodeURIComponent(JSON.stringify(modbus))
+        fetch('https://thiago-ito.github.io/Thiago-Ito-Publico/modelos?modbus=${encodedData}')
+        .then(res => res.text())
+        .then(res => console.log(res))
+        .catch(err => console.error(err))
 
     </body>
 </html>
