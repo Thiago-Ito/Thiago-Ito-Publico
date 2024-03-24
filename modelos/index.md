@@ -5,10 +5,11 @@
     </head>
     <body>
         <script>
-           fetch("modbus.json")
-           .then(response => response.getContentText())
-           .then(data => JSON.parse(response))          
-           
+           fetch("modbus.json", {headers: {
+    'Accept': 'application/json'
+  }})
+           .then(response => response.json())     
+           .then(data => console.log(data))
         </script>
     </body>
 </html>
