@@ -3,7 +3,7 @@
         
     </head>
     <body>
-    <script>
+    <script type="text/javascript">
        const modbus = [
          {
            "marca": "Khomp Eletronicos",
