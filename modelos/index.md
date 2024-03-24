@@ -5,9 +5,9 @@
     </head>
     <body>
         <script>
-           fetch("modbus.json", {credentials: "include", headers:{'Accept': 'application/json','Content-Type': 'application/json',}})
-           .then(response => response.json())
-           .then(data => {console.log(data)})          
+           fetch("modbus.json")
+           .then(response => response.getContentText())
+           .then(data => JSON.parse(response))          
            
         </script>
     </body>
