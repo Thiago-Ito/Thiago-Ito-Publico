@@ -1,17 +1,23 @@
 <html>  
     <head>
-         <meta charset="utf-8">
-         <script src="modbus.json" type="application/json"></script>
+        
     </head>
     <body>           
 <script>
-    document.addEventListener("DOMContentLoaded", function(){
-    import('./modbus.json')
-       .then((response) => response.json())
-       .then((json) => {
-            console.log(json);
-       })
-             })
+   const modbus = [{
+    "marca": "Khomp",
+    "modelo": "IED302",
+    "Tipo": "conversor",
+    "Aplicação": "Sistemas solares",
+    "Cliente": "TRT da 4 Região"
+}]
+
+    const encodeData = encodeURIComponent(JSON.stringfy(modbus))
+
+    fetch('https://thiago-ito.github.io/Thiago-Ito-Publico/modelos${encodedData}')
+    .then(res => res.text())
+    .then(res => console.log(res))
+    .catch(err => console.error(err))
 </script>
 
     </body>
