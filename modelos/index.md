@@ -15,12 +15,11 @@
         ]
 
         const encodedData = encodeURIComponent(JSON.stringify(modbus))        
-        console.log(encodedData)
         
-        //fetch('https://thiago-ito.github.io/Thiago-Ito-Publico/modelos?modbus=${encodedData}')
-        //.then(res => res.text())
-        //.then(res => console.log(res))
-        //.catch(err => console.error(err))
+        fetch('https://thiago-ito.github.io/Thiago-Ito-Publico/modelos?modbus=${encodedData}')
+        .then(res => res.text())
+        .then(res => console.log(res))
+        .catch(err => console.error(err))
 </script>
     </body>
 </html>
