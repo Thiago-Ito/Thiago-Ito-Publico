@@ -12,7 +12,7 @@
     "Cliente": "TRT da 4 Região"
 }]
 
-    const encodeData = encodeURIComponent(JSON.stringify(modbus))
+    const encodedData = encodeURIComponent(JSON.stringify(modbus))
        
     fetch('https://thiago-ito.github.io/Thiago-Ito-Publico/modelos/${encodedData}')
     .then(res => res.text())
