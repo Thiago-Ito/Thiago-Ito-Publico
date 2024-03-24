@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-           fetch("modbus.json", {headers("Content-Type": "multipart/form-data", "Accept": "application/json"}))
+           fetch("modbus.json", {headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
            .then(response => response.json())     
            .then(data => console.log(data))
         </script>
