@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-           fetch("modbus.json")
+           fetch("modbus.json", {credentials: "include", headers:{'Accept': 'application/json','Content-Type': 'application/json',}})
            .then(response => response.json())
            .then(data => {console.log(data)})          
            
