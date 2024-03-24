@@ -5,9 +5,10 @@
     </head>
     <body>
        <script>
-          fetch('./modbus.json')
-          .then(results => results.json())
-          .then(console.log);
+         fetch('./modbus.json')
+        .then(res => res.text())
+        .then(res => console.log(res))
+        .catch(err => console.error(err))
        </script>
     </body>
 </html>
