@@ -4,8 +4,10 @@
         <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     </head>
     <body>
-      fetch("modbus.json")
-        .then(response => response.json())
-        .then(data => console.log(data.sentence))
+        <script>
+           fetch("modbus.json")
+           .then(response => response.json())
+           .then(data => console.log(data.sentence))
+        </script>
     </body>
 </html>
