@@ -5,9 +5,9 @@
     <body>           
 <script>
    const modbus = import("./modbus.json")
-   const encodedData = JSON.stringify(modbus)
+   //const encodedData = JSON.stringify(modbus)
        
-    console.log(encodedData)
+    //console.log(encodedData)
     
 </script>
 
