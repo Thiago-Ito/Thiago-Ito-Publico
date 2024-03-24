@@ -4,7 +4,7 @@
     </head>
     <body>           
 <script>
-   const modbus = import(modbus.json)
+   const modbus = import(./modbus.json)
    const encodedData = JSON.stringify(modbus)
        
     console.log(encodedData)
