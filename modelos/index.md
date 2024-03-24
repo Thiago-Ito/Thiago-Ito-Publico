@@ -4,7 +4,7 @@
     </head>
     <body>           
 <script src="./modbus.json">
-   var modbus = import("./modbus.json")
+   const modbus = JSON.parse(import("./modbus.json"))
    //const encodedData = JSON.stringify(modbus)
        
     //console.log(encodedData)
