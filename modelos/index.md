@@ -15,9 +15,7 @@
     const encodedData = encodeURIComponent(JSON.stringify(modbus))   
        
     console.log(encodedData)
-    .then(res => res.text())
-    .then(res => console.log(res))
-    .catch(err => console.error(err))
+    
 </script>
 
     </body>
