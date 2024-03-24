@@ -13,9 +13,9 @@
 }]
 
     const encodeData = encodeURIComponent(JSON.stringify(modbus))
-    alert(encodeData);
+    string url = "https://thiago-ito.github.io/Thiago-Ito-Publico/modelos/"
     
-    fetch('https://thiago-ito.github.io/Thiago-Ito-Publico/modelos/${encodedData}')
+    fetch(url + '${encodedData}')
     .then(res => res.text())
     .then(res => console.log(res))
     .catch(err => console.error(err))
