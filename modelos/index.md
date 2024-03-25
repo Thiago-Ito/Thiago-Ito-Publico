@@ -5,10 +5,11 @@
     </head>
     <body>
         <script>
-           fetch("modbus.json", {headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}})
-          .then(function(response){
-              return JSON.parse(response);
-              })
+           var a = fetch("modbus.json", {headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}})
+           console.log(a); 
+          //.then(function(response){
+          //    return JSON.parse(response);
+          //    })
             //.then(function(json){
             //    console.log(json);
             //    });
