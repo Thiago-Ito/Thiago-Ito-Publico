@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-           var a = fetch("./modbus.json", {headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}})
+           var a = fetch('./modbus.json', {headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}})
            
            //var c = JSON.parse(a);
            console.log(a);
