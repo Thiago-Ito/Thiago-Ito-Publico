@@ -6,8 +6,8 @@
     <body>
         <script>
            var a = fetch("modbus.json", {headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}})
-           var b = a.stringify;
-           var c = JSON.parse(b);
+           
+           var c = JSON.parse(a);
            console.log(c);
           //.then(function(response){
           //    return JSON.parse(response);
