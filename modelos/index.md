@@ -7,9 +7,9 @@
         <script>
            fetch("modbus.json", {headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'}})
           .then(function(response){
-              return response.json();
+              return JSON.parse(response);
               })
-            .then(function(json){
+            //.then(function(json){
                 console.log(json);
                 });
         </script>
