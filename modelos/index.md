@@ -10,8 +10,8 @@
               return JSON.parse(response);
               })
             //.then(function(json){
-                console.log(json);
-                });
+            //    console.log(json);
+            //    });
         </script>
     </body>
 </html>
