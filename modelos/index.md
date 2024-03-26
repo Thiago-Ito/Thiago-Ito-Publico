@@ -11,7 +11,7 @@
 
 <script>
 function myFunction() {
-    const mbus = fetch('./modbus.json');
+    const mbus = fetch("./modbus.json");
       alert(mbus.stringify);
 }
 </script>
