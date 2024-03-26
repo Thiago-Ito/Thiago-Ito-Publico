@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Página de monitoramento Modbus</title>
+
 </head>
 <body>
 
