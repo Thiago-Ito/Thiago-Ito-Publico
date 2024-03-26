@@ -15,7 +15,6 @@ function myFunction() {
   fetch("https://thiago-ito.github.io/Thiago-Ito-Publico/modelos/")
   .then(res => res.json())
   .then(data => console.log(data))
-  alert(data)
 }
 </script>
 
