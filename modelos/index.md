@@ -1,11 +1,11 @@
 <html>
 <head>
-<title>Page Title</title>
+<title>Página de monitoramento Modbus</title>
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<h1>Khomp IED302</h1>
+<p>Soluções para monitoramento remoto de equipamentos Modbus RS485</p>
 
 </body>
 </html>
