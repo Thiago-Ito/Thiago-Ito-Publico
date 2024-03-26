@@ -11,7 +11,10 @@
 
 <script>
 function myFunction() {
-  alert("I am an alert box!");
+
+  fetch("https://thiago-ito.github.io/Thiago-Ito-Publico/modelos/")
+  .then(res => res.json())
+  .then(data => console.log(data))
 }
 </script>
 
