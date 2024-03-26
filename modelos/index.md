@@ -11,7 +11,8 @@
 
 <script>
 function myFunction() {
-    
+    const mbus = import('./modbus.json);
+      alert(mbus.stringify);
 }
 </script>
 
