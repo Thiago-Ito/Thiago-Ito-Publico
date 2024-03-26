@@ -1,7 +1,4 @@
 <html>
-<head>
-
-</head>
 <body>
 
 <h1>Khomp IED302</h1>
