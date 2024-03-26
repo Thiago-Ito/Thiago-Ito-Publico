@@ -11,8 +11,7 @@
 
 <script>
 function myFunction() {
-
-  alert('hdjskhfdshfidshfdshfdshifdshfsdhjf')
+    
 }
 </script>
 
