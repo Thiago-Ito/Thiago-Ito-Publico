@@ -7,10 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.text({limit: "10mb"}));
 
-app.get("/", (req, res) => res.send({msg: "Serviço online......."}));
+app.get("/", (req, res) => res.send({msg: "Serviço online............."}));
 
 var mbus = require('./modbus.json');
-app.get('/modelos/', (req,res) => {res.send([{"modelo":"model", "marca":"brand", "tipo":"type"}])});
+app.get('/modelos/', (req,res) => {res.send(mbus)});
 
 const port = process.env.PORT || 3000; // opta pela porta oferecida pelo serv web ou pela porta 3000
 
@@ -21,7 +21,7 @@ const options = {
 };
 
 http.createServer(options, app).listen(port);
-console.log(`Server running in port ${port}` + "................................................");
+console.log(`Servidor rodando na porta ${port}` + "................................................");
 
 //app.listen(port, function(err)
 //{
