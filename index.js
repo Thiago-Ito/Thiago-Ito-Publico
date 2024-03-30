@@ -1,6 +1,6 @@
 const express = require("express");
 const fs = require("fs");
-const https = require("https");
+const http = require("http");
 const cors = require("cors");
 
 const app = express();
@@ -20,7 +20,7 @@ const options = {
     cert: fs.readFileSync("server.crt")
 };
 
-https.createServer(options, app).listen(port);
+http.createServer(options, app).listen(port);
 console.log(`Server running in port ${port}` + "................................................");
 
 //app.listen(port, function(err)
