@@ -1,7 +1,15 @@
+[{
+        "modelo": "R4DIF08",
+        "marca": "ARDUINO",
+        "tipo": "ENTRADAS DIGITAIS"        
+    },
     {
-        "marca": "khomp",
-        "modelo": "khomp",
-        "cliente": "TRT4",
-        "aplicacao": "Sistemas modbus RS485",
-        "obs": "isto é apenas um teste........"
-    }
+        "modelo": "MODELO 2",
+        "marca": "MARCA 2",
+        "tipo": "TIPO 2"        
+    },
+    {
+        "modelo": "MODELO 3",
+        "marca": "MARCA 3",
+        "tipo": "TIPO 3"        
+    }]
