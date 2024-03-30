@@ -1,15 +1,15 @@
     [{
-        "modelo": "R4DIF08",
-        "marca": "ARDUINO",
-        "tipo": "ENTRADAS DIGITAIS"        
+        "modelo": "R4DIF08 TRT4 TESTE",
+        "marca": "ARDUINO TRT4 TESTE",
+        "tipo": "ENTRADAS DIGITAIS TRT4 TESTE"        
     },
     {
-        "modelo": "MODELO 2",
-        "marca": "MARCA 2",
-        "tipo": "TIPO 2"        
+        "modelo": "MODELO 2 TRT4 TESTE",
+        "marca": "MARCA 2 TRT4 TESTE",
+        "tipo": "TIPO 2 TRT4 TESTE"        
     },
     {
-        "modelo": "MODELO 3",
-        "marca": "MARCA 3",
-        "tipo": "TIPO 3"        
+        "modelo": "MODELO 3 TRT4 TESTE",
+        "marca": "MARCA 3 TRT4 TESTE",
+        "tipo": "TIPO 3 TRT4 TESTE"        
     }]
