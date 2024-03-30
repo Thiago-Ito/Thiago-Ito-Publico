@@ -10,7 +10,7 @@ app.use(express.text({limit: "10mb"}));
 app.get("/", (req, res) => res.send({msg: "Serviço online......."}));
 
 var mbus = require('./modbus.json');
-app.get('/modelos/', (req,res) => {res.send({msg: "{'modelo':'model', 'marca':'brand', 'tipo':'type'}"})});
+app.get('/modelos/', (req,res) => {res.send([{"modelo":"model", "marca":"brand", "tipo":"type"}])});
 
 const port = process.env.PORT || 3000; // opta pela porta oferecida pelo serv web ou pela porta 3000
 
