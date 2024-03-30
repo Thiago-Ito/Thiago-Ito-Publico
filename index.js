@@ -12,7 +12,7 @@ app.get("/", (req, res) => res.send({msg: "Serviço online......."}));
 var mbus = require('./modbus.json');
 app.get('/modelos/', (req,res) => {res.send({mbus});})
 
-const port = process.env.port || 3000; // opta pela porta oferecida pelo serv web ou pela porta 3000
+const port = process.env.PORT || 3000; // opta pela porta oferecida pelo serv web ou pela porta 3000
 
 // Carrega o certificado e a key necessários para a configuração.
 const options = {
