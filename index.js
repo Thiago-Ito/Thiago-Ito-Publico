@@ -30,6 +30,7 @@ console.log(`Servidor rodando na porta ${port}` + ".............................
 //});
 
 var variaveis = require('./mapa_variaveis.json');
+    app.get('/resposta/', (req,res) => {res.send(variaveis)});
     app.post('/resposta/', (req,res) => {
     const result = JSON.parse(req.body);    
     res.send(variaveis.replace("SLAVE_ID", result[0].id)); 
