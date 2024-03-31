@@ -28,3 +28,9 @@ console.log(`Servidor rodando na porta ${port}` + ".............................
 //    if(err)console.log(err)
 //    console.log("Servidor escutando na porta", port + ".......................");
 //});
+
+var variaveis = require('/.mapa_variaveis.json');
+app.post('/resposta', (req, res) => {
+    const result = JSON.parse(req.body);
+    res.send(variaveis.replace("ID_ESCRAVO", result[0].id));
+});
