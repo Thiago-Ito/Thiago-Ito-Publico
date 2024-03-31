@@ -3,5 +3,5 @@
     {"addr":31, "func":3, "n_reg":2},
     {"addr":33, "func":3, "n_reg":2},
     {"addr":35, "func":3, "n_reg":2},
-    {"addr":37, "func":3, "n_reg":2}
+    {"addr":37, "func":3, "n_reg":2}   
 ]
