@@ -1,15 +1,15 @@
     [{
         "modelo": "MODELO 01",
         "marca": "MARCA 01",
-        "tipo": "TIPO 01"        
+        "tipo": "1"        
     },
     {
         "modelo": "MODELO 02",
         "marca": "MARCA 02",
-        "tipo": "TIPO 02"        
+        "tipo": "1"        
     },
     {
         "modelo": "MODELO 03",
         "marca": "MARCA 03",
-        "tipo": "TIPO 03"        
+        "tipo": "1"        
     }]
