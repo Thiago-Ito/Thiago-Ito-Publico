@@ -12,4 +12,9 @@
         "modelo": "MODELO 03",
         "marca": "MARCA 03",
         "tipo": "1"        
+    },
+    {
+        "modelo": "MODELO 04",
+        "marca": "MARCA 04",
+        "tipo": "1"        
     }]
