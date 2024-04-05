@@ -1,5 +1,5 @@
 [
-    {"name": "MODELO 01", "id": "SLAVE_ID", "total_packets": 4},
+    {"name": "MODELO 01", "id": 10, "total_packets": 4},
     {"addr":31, "func":3, "n_reg":2},
     {"addr":33, "func":3, "n_reg":2},
     {"addr":35, "func":3, "n_reg":2},
