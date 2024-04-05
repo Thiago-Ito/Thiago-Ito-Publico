@@ -31,7 +31,7 @@ console.log(`Servidor rodando na porta ${port}` + ".............................
 //    console.log("Servidor escutando na porta", port + ".......................");
 //});
     
-    var example_map = "\"{\"name\":\"MODELO_01\", \"id\": INPUT_ID}, \"total_packets\":5} {\"addr\":3004, \"func\":4, \"n_reg\":2} {\"addr\":4405, \"func\":3, \"n_reg\":1} {\"addr\":3025, \"func\":4, \"n_reg\":1} {\"addr\":4069, \"func\":3, \"n_reg\":1} {\"addr\":3604, \"func\":4, \"n_reg\":2}\"";
+    var example_map = "\"{\"name\":\"MODELO 01\", \"id\": INPUT_ID}, \"total_packets\":5} {\"addr\":3004, \"func\":4, \"n_reg\":2} {\"addr\":4405, \"func\":3, \"n_reg\":1} {\"addr\":3025, \"func\":4, \"n_reg\":1} {\"addr\":4069, \"func\":3, \"n_reg\":1} {\"addr\":3604, \"func\":4, \"n_reg\":2}\"";
    
     app.post("/resposta", (req, res) => {
         const result = JSON.parse(req.body);
