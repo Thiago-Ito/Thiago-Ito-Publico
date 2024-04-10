@@ -1,20 +1,15 @@
     [{
-        "modelo": "MODELO 01",
-        "marca": "MARCA 01",
+        "modelo": "Inversor 01",
+        "marca": "Growatt",
         "tipo": "1"        
     },
     {
-        "modelo": "MODELO 02",
-        "marca": "MARCA 02",
+        "modelo": "DEEP SEA",
+        "marca": "DEEP SEA",
         "tipo": "1"        
     },
     {
-        "modelo": "MODELO 03",
-        "marca": "MARCA 03",
-        "tipo": "1"        
-    },
-    {
-        "modelo": "MODELO 04",
-        "marca": "MARCA 04",
+        "modelo": "Inversor 02",
+        "marca": "Sofar",
         "tipo": "1"        
     }]

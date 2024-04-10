@@ -1,7 +1,26 @@
 [
-    {"name": "MODELO 01", "id": 10, "total_packets": 4},
-    {"addr":31, "func":3, "n_reg":2},
-    {"addr":33, "func":3, "n_reg":2},
-    {"addr":35, "func":3, "n_reg":2},
-    {"addr":37, "func":3, "n_reg":2}   
-]
+    {"name":"growatt", "id":7, "total_packets":4, "packets":
+        [ 
+          {"addr":31, "func":4, "n_reg":2},
+          {"addr":33, "func":4, "n_reg":2},
+          {"addr":35, "func":4, "n_reg":2},
+          {"addr":37, "func":4, "n_reg":2}
+        ]
+    },
+    {"name":"fronius", "id":8, "total_packets":4, "packets":
+        [ 
+          {"addr":102, "func":4, "n_reg":2},
+          {"addr":104, "func":4, "n_reg":2},
+          {"addr":106, "func":4, "n_reg":2},
+          {"addr":108, "func":4, "n_reg":2}
+        ]
+    },
+    {"name":"DEEP SEA", "id":39, "total_packets":4, "packets":
+        [ 
+          {"addr":181, "func":4, "n_reg":2},
+          {"addr":183, "func":4, "n_reg":2},
+          {"addr":185, "func":4, "n_reg":2},
+          {"addr":187, "func":4, "n_reg":2}
+        ]
+    }
+  ]
