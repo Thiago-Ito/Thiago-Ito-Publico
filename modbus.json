@@ -1,5 +1,5 @@
     [{
-        "modelo": "Inversor 01",
+        "modelo": "growatt",
         "marca": "Growatt",
         "tipo": "1"        
     },
@@ -9,7 +9,17 @@
         "tipo": "1"        
     },
     {
-        "modelo": "Inversor 02",
-        "marca": "Sofar",
+        "modelo": "goodwe",
+        "marca": "Goodwe",
+        "tipo": "1"        
+    },
+    {
+        "modelo": "fronius",
+        "marca": "Fronius",
+        "tipo": "1"        
+    },
+    {
+        "modelo": "COMAP",
+        "marca": "COMAP",
         "tipo": "1"        
     }]
