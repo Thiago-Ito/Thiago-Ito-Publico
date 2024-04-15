@@ -26,10 +26,16 @@ console.log(`Servidor rodando na porta ${port}` + ".............................
 
 
 ///////// MAPA DE VARIÁVEIS (INÍCIO)/////////
-const mapa = ["{\"name\":\"growatt\", \"id\": 00, \"total_packets\":2} {\"addr\":3004, \"func\":4, \"n_reg\":2} {\"addr\":3200, \"func\":3, \"n_reg\":1}",
-              "{\"name\":\"fronius\", \"id\": 00, \"total_packets\":5} {\"addr\":3004, \"func\":4, \"n_reg\":2} {\"addr\":4405, \"func\":3, \"n_reg\":1} {\"addr\":3025, \"func\":4, \"n_reg\":1} {\"addr\":4069, \"func\":3, \"n_reg\":10} {\"addr\":3604, \"func\":4, \"n_reg\":2}",
-              "{\"name\":\"goodwe\", \"id\": 00, \"total_packets\":2} {\"addr\":3004, \"func\":4, \"n_reg\":2} {\"addr\":3200, \"func\":3, \"n_reg\":1}"
-]
+const mapa = ["{\"name\":\"GROWATT\", \"id\": 00, \"total_packets\":2} {\"addr\":3004, \"func\":4, \"n_reg\":2} {\"addr\":3200, \"func\":3, \"n_reg\":1}",
+              "{\"name\":\"FRONIUS\", \"id\": 00, \"total_packets\":5} {\"addr\":3004, \"func\":4, \"n_reg\":2} {\"addr\":4405, \"func\":3, \"n_reg\":1} {\"addr\":3025, \"func\":4, \"n_reg\":1} {\"addr\":4069, \"func\":3, \"n_reg\":10} {\"addr\":3604, \"func\":4, \"n_reg\":2}",
+              "{\"name\":\"GOODWE\", \"id\": 00, \"total_packets\":2} {\"addr\":3004, \"func\":4, \"n_reg\":2} {\"addr\":3200, \"func\":3, \"n_reg\":1}",
+              "{\"name\":\"A_R4DIF08_01P_01R\", \"id\": 00, \"total_packets\":1} {\"addr\":129, \"func\":3, \"n_reg\":1}",
+              "{\"name\":\"A_R4DIF08_01P_08R\", \"id\": 00, \"total_packets\":1} {\"addr\":129, \"func\":3, \"n_reg\":8}",
+              "{\"name\":\"A_R4DIF08_02P_04R\", \"id\": 00, \"total_packets\":2} {\"addr\":129, \"func\":3, \"n_reg\":4}{\"addr\":133, \"func\":3, \"n_reg\":4}",
+              "{\"name\":\"B_R4DIF08_01P_01R\", \"id\": 00, \"total_packets\":1} {\"addr\":129, \"func\":3, \"n_reg\":1}",
+              "{\"name\":\"B_R4DIF08_01P_08R\", \"id\": 00, \"total_packets\":1} {\"addr\":129, \"func\":3, \"n_reg\":8}",
+              "{\"name\":\"B_R4DIF08_02P_04R\", \"id\": 00, \"total_packets\":2} {\"addr\":129, \"func\":3, \"n_reg\":4}{\"addr\":133, \"func\":3, \"n_reg\":4}"
+             ]
 ///////// MAPA DE VARIÁVEIS (FIM)///////// 
 
     app.post('/resposta/', (req,res) => {           

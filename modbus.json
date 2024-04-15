@@ -1,25 +1,35 @@
     [{
-        "modelo": "growatt",
-        "marca": "Growatt",
+        "modelo": "GROWATT",
+        "marca": "growatt",
         "tipo": "1"        
     },
     {
-        "modelo": "DEEP SEA",
-        "marca": "DEEP SEA",
+        "modelo": "A_R4DIF08_01P_01R",
+        "marca": "r4dif08_01p_01r",
         "tipo": "1"        
     },
     {
-        "modelo": "goodwe",
-        "marca": "Goodwe",
+        "modelo": "A_R4DIF08_01P_08R",
+        "marca": "r4dif08_01p_08r",
         "tipo": "1"        
     },
     {
-        "modelo": "fronius",
-        "marca": "Fronius",
+        "modelo": "A_R4DIF08_02P_04R",
+        "marca": "r4dif08_02p_04r",
         "tipo": "1"        
     },
     {
-        "modelo": "COMAP",
-        "marca": "COMAP",
+        "modelo": "B_R4DIF08_01P_01R",
+        "marca": "r4dif08_01p_01r",
+        "tipo": "1"        
+    },
+    {
+        "modelo": "B_R4DIF08_01P_08R",
+        "marca": "r4dif08_01p_08r",
+        "tipo": "1"        
+    },
+    {
+        "modelo": "B_R4DIF08_02P_04R",
+        "marca": "r4dif08_02p_04r",
         "tipo": "1"        
     }]
