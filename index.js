@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const http = require("http");
+const https = require("https");
 const cors = require("cors");
 
 const app = express();
@@ -13,17 +14,16 @@ app.get("/", (req, res) => res.send({msg: "Serviço online............."}));
 var mbus = require('./modbus.json');
 app.get('/modelos/', (req,res) => {res.send(mbus)});
 
-const port = process.env.PORT || 3000; // opta pela porta oferecida pelo serv web ou pela porta 3000
-
 // Carrega o certificado e a key necessários para a configuração.
 const options = {
     key: fs.readFileSync("server.key"),
-    cert: fs.readFileSync("server.crt")
+    cert: fs.readFileSync("server.crt")   
 };
 
-http.createServer(options, app).listen(port);
-console.log(`Servidor rodando na porta ${port}` + "................................................");
+const port = process.env.PORT || 3000; // opta pela porta oferecida pelo serv web ou pela porta 3000
 
+https.createServer(options, app).listen(port);
+console.log(`Servidor rodando na porta ${port}` + "................................................");
 
 ///////// MAPA DE VARIÁVEIS (INÍCIO)/////////
 const mapa = ["{\"name\":\"GROWATT\", \"id\": 00, \"total_packets\":2} {\"addr\":3004, \"func\":4, \"n_reg\":2} {\"addr\":3200, \"func\":3, \"n_reg\":1}",
@@ -34,9 +34,12 @@ const mapa = ["{\"name\":\"GROWATT\", \"id\": 00, \"total_packets\":2} {\"addr\"
               "{\"name\":\"A_R4DIF08_02P_04R\", \"id\": 00, \"total_packets\":2} {\"addr\":129, \"func\":3, \"n_reg\":4}{\"addr\":133, \"func\":3, \"n_reg\":4}",
               "{\"name\":\"B_R4DIF08_01P_01R\", \"id\": 00, \"total_packets\":1} {\"addr\":129, \"func\":3, \"n_reg\":1}",
               "{\"name\":\"B_R4DIF08_01P_08R\", \"id\": 00, \"total_packets\":1} {\"addr\":129, \"func\":3, \"n_reg\":8}",
-              "{\"name\":\"B_R4DIF08_02P_04R\", \"id\": 00, \"total_packets\":2} {\"addr\":129, \"func\":3, \"n_reg\":4}{\"addr\":133, \"func\":3, \"n_reg\":4}"
+              "{\"name\":\"B_R4DIF08_02P_04R\", \"id\": 00, \"total_packets\":2} {\"addr\":129, \"func\":3, \"n_reg\":4}{\"addr\":133, \"func\":3, \"n_reg\":4}",
+              "{\"name\":\"GROWATT XXXXXXXXX\", \"id\": 00, \"total_packets\":0} {}" 
              ]
 ///////// MAPA DE VARIÁVEIS (FIM)///////// 
+
+const mapa_var = require('./mapa_variaveis.json');
 
     app.post('/resposta/', (req,res) => {           
 
@@ -92,3 +95,108 @@ const mapa = ["{\"name\":\"GROWATT\", \"id\": 00, \"total_packets\":2} {\"addr\"
         res.send(mapa_completo);
         console.log("Resposta ao POST enviada!");
     });
+
+    //BLOCO MQTT/MYSQL (INICIO)
+
+var mqtt = require("mqtt");
+var mysql = require("mysql");
+var con;
+
+var config = {
+    host: 'broker.hivemq.com',
+    port: 8883,
+    protocol: 'ssl',
+    username: 'scadatrt4',
+    password: 'Scada@trt4',
+    //clientId: 'trt4_remota211521',
+    connectTimeout: 3000, 
+    reconnectPeriod: 1000
+}
+
+// initialize the MQTT client
+var client = mqtt.connect(config);
+
+// setup the callbacks
+client.on('connect', function () {
+    console.log('Conectado ao broker ', config.protocol, "://", config.host, ":", config.port, " => ID do Cliente: ", config.clientId), "...";
+});
+
+client.off('disconnect', function(){
+    console.log("Desconectado do broker...");
+});
+
+client.on('error', function (error) {
+    console.log(error);
+});
+
+// subscribe to topic 'my/test/topic'
+client.subscribe('remota/211521/modbus_response', function (){
+    console.log("  => Subscribed to ", 'remota/211521/modbus_response', "...");
+});
+
+client.subscribe('remota/211521/commands/modbus_single_requestt', function (){
+    console.log("  => Subscribed to ", 'remota/211521/commands/modbus_single_requestt', "...");
+});
+
+//conexao ao BD MySql
+    con = mysql.createConnection({
+    host: "localhost",
+    user:"TRT4",
+    password:"Scada@trt4",
+    database: "dbtrt4"
+});
+
+con.connect(function(err){
+    if(err)throw err;
+    console.log("Conectado ao banco MySql...");
+})
+
+client.on('message', function (topic, message, packet) {    
+    //called each time a message is received              
+    var salvar_no_BD = false;
+    var mqtt_msg_recebida = JSON.parse(message.toString());
+    //console.log("a mensagem é: ", JSON.stringify(mqtt_msg_recebida, '', 2).substring(0,50), "....");
+    //console.log("    o topico é :", topic);    
+    var value_Name = Object.values(mqtt_msg_recebida)[0];
+    var value_Timestamp = Object.values(mqtt_msg_recebida)[1];
+    var value_ID = Object.values(mqtt_msg_recebida)[2];
+    var value_Registers = JSON.stringify(Object.values(mqtt_msg_recebida)[3]);
+    var value_Registros_Digitais = "";
+
+    //separando os equipamentos modbus....
+    if(JSON.stringify(value_Name).includes("R4DIF08")) //trata-se de um modulo R4DIF08
+    {
+        const index = value_Registers.lastIndexOf("\"reg\":");
+        var dados_IO = value_Registers.substring(index+7, value_Registers.length-3); //captura os dados das entradas digitais do R4DIF08
+        
+        if(dados_IO.length > 1) //a placa retornou os valores de todas as entradas
+        {
+            var dados_IO_tratados = dados_IO.replaceAll(" ", ""); //retira os espaços entre 0000 0001 000.....
+            value_Registros_Digitais = dados_IO_tratados.charAt(3) + dados_IO_tratados.charAt(7) + dados_IO_tratados.charAt(11) + dados_IO_tratados.charAt(15) + dados_IO_tratados.charAt(19) + dados_IO_tratados.charAt(23) + dados_IO_tratados.charAt(27) + dados_IO_tratados.charAt(31);
+        }
+        else //dados nao fornecidos
+        {           
+            value_Registros_Digitais = "null";            
+        }
+
+        salvar_no_BD = true;
+
+    } //if(JSON.stringify(value_Name).includes("R4DIF08"))       
+    
+    if(salvar_no_BD == true){
+        var array_values = [value_Name, value_Timestamp, value_ID, value_Registros_Digitais];
+    //inserir os dados no BD mysql
+        var inserir_no_mysql = "INSERT INTO monitoramento (dispositivo, timestamp_mqtt, slaveID, entradas_digitais) VALUES('" + array_values[0] + "','" + array_values[1] + "','" + array_values[2] + "','" + array_values[3] + "')";
+        con.query(inserir_no_mysql, function(err, result){
+        if(err) throw err;
+        //console.log("Registro inserido com sucesso no banco de dados...");
+    })
+   } //if(salvar no BD == true)       
+}); //client on message
+
+//const comando_ao_remoto = ["{\"cmd\":\"send_frames\", \"esn\": \"211521\", \"frames\":[{\"fc\":0, \"frame\": \"010600100001a35d\", \"pt\":0, \"ts\":\"2024-04-21T15:55:08\"}], \"timestamp\":\"2024-04-21T15:55:08\"}"];
+//var comando_ao_remoto = "{\"cmd\": \"modbus_single_request\", \"name\": \"inversor\", \"id\":\"7\", \"addr\":\"61166\", \"func\": \"06\", \"n_reg\": \"1\", \"register\": \"01\"}";
+//comando_JSON = JSON.parse(comando_ao_remoto); 
+//client.publish('remota/211521/commands/modbus_single_request', JSON.stringify(comando_JSON));
+
+//BLOCO MQTT/MYSQL (FIM)
