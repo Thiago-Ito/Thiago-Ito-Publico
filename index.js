@@ -22,7 +22,8 @@ const options = {
 
 const port = process.env.PORT || 3000; // opta pela porta oferecida pelo serv web ou pela porta 3000
 
-https.createServer(options, app).listen(port);
+var servidor = https.createServer(options, app);
+servidor.listen(port);
 console.log(`Servidor rodando na porta ${port}` + "................................................");
 
 ///////// MAPA DE VARIÁVEIS (INÍCIO)/////////
@@ -96,6 +97,22 @@ const mapa_var = require('./mapa_variaveis.json');
         console.log("Resposta ao POST enviada!");
     });
 
+    app.post('/acionamento_disjuntor/', (req,res) => {             
+             var comando_ao_remoto = "{\"cmd\": \"modbus_single_request\", \"name\": \"inversor\", \"id\":\"7\", \"addr\":\"61166\", \"func\": \"06\", \"n_reg\": \"1\", \"register\": \"01\"}";
+             comando_JSON = JSON.parse(comando_ao_remoto);              
+             res.send(JSON.stringify(comando_JSON));   
+             //res.send({msg: "Acionamento do disjuntor............."});           
+             console.log("Comando de acionamento enviado ao disjuntor");            
+        });
+
+        app.post('/acionamento_contator/', (req,res) => {             
+             var comando_ao_remoto_2 = "{\"cmd\": \"modbus_single_request\", \"name\": \"inversor\", \"id\":\"8\", \"addr\":\"61166\", \"func\": \"06\", \"n_reg\": \"1\", \"register\": \"01\"}";
+             comando_JSON_2 = JSON.parse(comando_ao_remoto_2);              
+             res.send(JSON.stringify(comando_JSON_2));   
+             //res.send({msg: "Acionamento do contator............."});           
+             console.log("Comando de acionamento enviado ao contator");            
+        });
+
     //BLOCO MQTT/MYSQL (INICIO)
 
 var mqtt = require("mqtt");
@@ -109,8 +126,8 @@ var config = {
     username: 'scadatrt4',
     password: 'Scada@trt4',
     //clientId: 'trt4_remota211521',
-    connectTimeout: 3000, 
-    reconnectPeriod: 1000
+    connectTimeout: 5000, 
+    reconnectPeriod: 3000
 }
 
 // initialize the MQTT client
@@ -134,8 +151,8 @@ client.subscribe('remota/211521/modbus_response', function (){
     console.log("  => Subscribed to ", 'remota/211521/modbus_response', "...");
 });
 
-client.subscribe('remota/211521/commands/modbus_single_requestt', function (){
-    console.log("  => Subscribed to ", 'remota/211521/commands/modbus_single_requestt', "...");
+client.subscribe('remota/211521/commands/modbus_single_request', function (){
+    console.log("  => Subscribed to ", 'remota/211521/commands/modbus_single_request', "...");
 });
 
 //conexao ao BD MySql
@@ -150,6 +167,18 @@ con.connect(function(err){
     if(err)throw err;
     console.log("Conectado ao banco MySql...");
 })
+
+ //BLOCO WEBSOCKET (INICIO)
+ const WebSocket = require("ws");
+ const server = new WebSocket.Server({port:8080});
+ server.on("connection", (ws) => {
+ console.log("WebSocket habilitado!");
+ ws.send("bom dia cliente, seja muito bem vindo a este novo websocket!!!!!");
+     //ws.on("message", (message) => {
+     //   ws.send(`o cliente diz: ${message}`);
+     //})
+});
+//BLOCO WEBSOCKET (FIM)
 
 client.on('message', function (topic, message, packet) {    
     //called each time a message is received              
@@ -189,14 +218,11 @@ client.on('message', function (topic, message, packet) {
         var inserir_no_mysql = "INSERT INTO monitoramento (dispositivo, timestamp_mqtt, slaveID, entradas_digitais) VALUES('" + array_values[0] + "','" + array_values[1] + "','" + array_values[2] + "','" + array_values[3] + "')";
         con.query(inserir_no_mysql, function(err, result){
         if(err) throw err;
-        //console.log("Registro inserido com sucesso no banco de dados...");
-    })
-   } //if(salvar no BD == true)       
-}); //client on message
+        //console.log("Registro inserido com sucesso no banco de dados...");)
 
-//const comando_ao_remoto = ["{\"cmd\":\"send_frames\", \"esn\": \"211521\", \"frames\":[{\"fc\":0, \"frame\": \"010600100001a35d\", \"pt\":0, \"ts\":\"2024-04-21T15:55:08\"}], \"timestamp\":\"2024-04-21T15:55:08\"}"];
-//var comando_ao_remoto = "{\"cmd\": \"modbus_single_request\", \"name\": \"inversor\", \"id\":\"7\", \"addr\":\"61166\", \"func\": \"06\", \"n_reg\": \"1\", \"register\": \"01\"}";
-//comando_JSON = JSON.parse(comando_ao_remoto); 
-//client.publish('remota/211521/commands/modbus_single_request', JSON.stringify(comando_JSON));
+    })
+   } //if(salvar no BD == true)    
+
+}); //client on message
 
 //BLOCO MQTT/MYSQL (FIM)
