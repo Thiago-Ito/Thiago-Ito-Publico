@@ -5,9 +5,11 @@ const https = require("https");
 const cors = require("cors");
 
 const app = express();
+const bodyParser = require('body-parser');
 
 app.use(cors());
 app.use(express.text({limit: "10mb"}));
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => res.send({msg: "Serviço online............."}));
 
@@ -97,22 +99,21 @@ const mapa_var = require('./mapa_variaveis.json');
         console.log("Resposta ao POST enviada!");
     });
 
-    app.post('/acionamento_disjuntor/', (req,res) => {             
-             var comando_ao_remoto = "{\"cmd\": \"modbus_single_request\", \"name\": \"inversor\", \"id\":\"7\", \"addr\":\"61166\", \"func\": \"06\", \"n_reg\": \"1\", \"register\": \"01\"}";
-             comando_JSON = JSON.parse(comando_ao_remoto);              
-             res.send(JSON.stringify(comando_JSON));   
-             //res.send({msg: "Acionamento do disjuntor............."});           
-             console.log("Comando de acionamento enviado ao disjuntor");            
+    app.post('/liga_disjuntor/', (req,res) => {                        
+             console.log("Comando de ligar enviado ao disjuntor.....req_body: ", req.body);  
+             client.publish('remota/211521/commands/modbus_single_request','{"cmd":"modbus_single_response", "name": "contator", "id": 248, "addr": 40002, "func": 6, "n_reg": 1, "register": [1, 0]}');              
+             setTimeout(() => {
+             client.publish('remota/211521/commands/modbus_single_request','{"cmd":"modbus_single_response", "name": "contator", "id": 248, "addr": 40002, "func": 6, "n_reg": 1, "register": [0, 0]}');
+             }, 2000);
         });
 
-        app.post('/acionamento_contator/', (req,res) => {             
-             var comando_ao_remoto_2 = "{\"cmd\": \"modbus_single_request\", \"name\": \"inversor\", \"id\":\"8\", \"addr\":\"61166\", \"func\": \"06\", \"n_reg\": \"1\", \"register\": \"01\"}";
-             comando_JSON_2 = JSON.parse(comando_ao_remoto_2);              
-             res.send(JSON.stringify(comando_JSON_2));   
-             //res.send({msg: "Acionamento do contator............."});           
-             console.log("Comando de acionamento enviado ao contator");            
-        });
-
+        app.post('/liga_contator/', (req,res) => {              
+            console.log("Comando de ligar enviado ao contator.....req_body: ", req.body);           
+       });                    
+             
+                       
+        
+       
     //BLOCO MQTT/MYSQL (INICIO)
 
 var mqtt = require("mqtt");
